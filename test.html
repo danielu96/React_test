@@ -17,26 +17,35 @@
 
 
 
-      const Nazwy = props => {
-       const [State , setState] = React.useState('') ;
+      const Nazwy = () => {
+       const [State , setState] = React.useState('0') ;
        const [value , setValue] = React.useState('') ;
+       const [Counter , setCounter] = React.useState('0') ;
            
                
                const handleClick = () => {
-                 setState (State + 'VERY GOOD');
+                 setState (State + 1);
                }
                 const handleChange =(e) => {
                   setValue (e.target.value)
                 }
-                           
-                                
+                   const  handleResetClick = () => {
+                     setValue(" ");
+                     setState("");
+                     setCounter("");
+                   }       
+                   const increase = () => setCounter(count => count - 1);
+                   
                 return  <div className = 'REA'>
                   <h1>HOOKI</h1>
                   {State}<br/>
                   <p>{value}</p>
                  <button onClick = {handleClick}>Dodaj</button>
                  <input  value ={value} type="text" placeholder="napisz coś" onChange={handleChange}></input>
-                  </div>
+                 <button onClick={handleResetClick}>Reset</button><br/>
+                 <p>{Counter}</p>
+                 <button onClick={increase}>Dolicz 1 </button>
+                </div>
       
     }
           
