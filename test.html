@@ -18,9 +18,9 @@
 
 
       const Nazwy = () => {
-       const [State , setState] = React.useState('0') ;
+       const [State , setState] = React.useState(0) ;
        const [value , setValue] = React.useState('') ;
-       const [Counter , setCounter] = React.useState('0') ;
+       const [Counter , setCounter] = React.useState(0) ;
            
                
                const handleClick = () => {
@@ -34,8 +34,8 @@
                      setState("");
                      setCounter("");
                    }       
-                   const increase = () => setCounter(count => count - 1);
-                   
+                   const increase = () => setCounter(count => count + 1);
+                   const substraction = () => setCounter(count => count - 1);
                 return  <div className = 'REA'>
                   <h1>HOOKI</h1>
                   {State}<br/>
@@ -45,6 +45,7 @@
                  <button onClick={handleResetClick}>Reset</button><br/>
                  <p>{Counter}</p>
                  <button onClick={increase}>Dolicz 1 </button>
+                 <button onClick={substraction}>Odejmij 1 </button>
                 </div>
       
     }
