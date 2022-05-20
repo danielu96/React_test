@@ -13,68 +13,22 @@
 <body>
     
     <div id = 'nowy'></div>
-    <script type="text/babel">
-
-
-
-      const Nazwy = props => {
-       const [useState , setState] = React.useState('KOKOLINO') 
-           
-               
-               const chlab = () => {
-                 setState ('VERY GOOD');
-               }
-                           
-                                
-                return  <div className = 'Card'>
-                  <h1>HAJ</h1>
-                  {useState}<br/>{chlab}<br/>
-                 <button onClick = {chlab}>NAJ</button>
-                  </div>
+    <script type="text/babel" src="App.js" ></script>
+    <script type="text/babel" src="Header.js" ></script>
+    <script type="text/babel" src="button.js" ></script>
+    <script type="text/babel" src="Start.js" ></script>
+    <script type="text/babel" src="contact.js" ></script>
+    <script type="text/babel" src="info.js" ></script>
+      <script type="text/babel" src="index.js" ></script>
       
-    }
-      class Head extends React.Component {
-          state = {
-            names :'bobo',
-            dupas :'gamon',
-          }
-          render() {
 
-            const change = () => {
-            this.setState({names : 'bubek'})
-            
-        }
-        const zmien = () => {
-            
-            this.setState({dupas : 'sisiak'})
-        }
-return <div> <h1>{this.state.names}</h1>
-             <p>{this.state.dupas}</p>
-             <button onClick ={change}>WAL</button>
-             <button onClick ={zmien}>palnij</button>
-    </div>
+     
 
-          }
-      } 
-           
-            
-      const Lola  = props => {
-        return (
-          <>
-<div className = 'card'>   
-  <Nazwy/>
-  <Head/>
-  </div>
-  </>
-        )
-  return <div>okaj<br/>{Nazwy}{Head}</div>
-}
-          
         
       
-    ReactDOM.render(<Lola/>, document.querySelector('#nowy'))
+   
     
-</script>
+
 
 </body>
 </html>

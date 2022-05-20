@@ -1,0 +1,1 @@
+ReactDOM.render(<Lola />, document.querySelector('#nowy'))
