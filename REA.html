@@ -7,7 +7,7 @@
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="react.css"/>
     <title>TESTY MOJE</title>
 </head>
 <body>
@@ -18,61 +18,28 @@
 
 
       const Nazwy = props => {
-       const [useState , setState] = React.useState('KOKOLINO') 
+       const [State , setState] = React.useState(0) 
            
                
-               const chlab = () => {
-                 setState ('VERY GOOD');
+               const handleClick = () => {
+                 setState (State + 1);
+               }
+               const handlesubstraction = () => {
+                 setState (State - 1);
                }
                            
                                 
                 return  <div className = 'Card'>
-                  <h1>HAJ</h1>
-                  {useState}<br/>{chlab}<br/>
-                 <button onClick = {chlab}>NAJ</button>
+                  <h1>counter</h1>
+                  {State}<br/>
+                 <button onClick = {handleClick}>dodaj 1</button>
+                 <button onClick = {handlesubstraction}>odejmij 1</button>
                   </div>
       
-    }
-      class Head extends React.Component {
-          state = {
-            names :'bobo',
-            dupas :'gamon',
-          }
-          render() {
-
-            const change = () => {
-            this.setState({names : 'bubek'})
-            
-        }
-        const zmien = () => {
-            
-            this.setState({dupas : 'sisiak'})
-        }
-return <div> <h1>{this.state.names}</h1>
-             <p>{this.state.dupas}</p>
-             <button onClick ={change}>WAL</button>
-             <button onClick ={zmien}>palnij</button>
-    </div>
-
-          }
-      } 
-           
-            
-      const Lola  = props => {
-        return (
-          <>
-<div className = 'card'>   
-  <Nazwy/>
-  <Head/>
-  </div>
-  </>
-        )
-  return <div>okaj<br/>{Nazwy}{Head}</div>
-}
-          
+    }     
         
       
-    ReactDOM.render(<Lola/>, document.querySelector('#nowy'))
+    ReactDOM.render(<Nazwy/>, document.querySelector('#nowy'))
     
 </script>
 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="stylesheet" href="react.css"/>
+    <title>REACTOR</title>
+</head>
+<body>
+    <div id = 'stary'></div>
+    <script type="text/babel">
+
+const Appi = props => {
+    const [value ,setvalue] = React.useState(0);
+  
+  const  handleClick = () => setvalue( value + 1)
+  const handleChange = event => setvalue(event.target.value)  
+  const handleReset = () => setvalue( 0);
+  const  substraction = () => setvalue( value - 1)
+
+  
+
+    return (
+        <div>
+       <h1> TO JEST LICZNIK          
+            </h1>
+            <p>{value}</p>
+            <button onClick={handleClick}>Dodaj</button>
+            <button onClick={substraction}>Odejmij</button>
+            <input value ={value} type = "text" placeholder="wpisz to " onChange={handleChange}></input>
+            <button onClick={handleReset}>RESET</button>
+        </div>
+    )
+    }
+
+
+  const Ola = props =>{
+    return (
+        <h1>Funkcja zewnętrzna </h1>
+    )
+}
+
+
+    class List extends React.Component {
+        state = {
+            stala:"STALA TRESC",
+            ewa : 'TEKST EWY',
+            adam : 'TEKST ADAMA',
+        }
+       
+        render() {
+           
+            return ( 
+               <div>
+                <h1>{this.state.adam}</h1>
+                <h1>{this.state.stala}</h1> 
+                <h1>{this.state.ewa}</h1> 
+              </div>
+            )
+        }
+           }
+const Komp =(props)=>{
+    return (
+        <div>
+            <h1>ALA FAGASIE
+                </h1>
+               <List przekazanie = {props}  />
+               <Ola nanie = {props} />
+            </div>
+         
+
+    )
+}
+
+
+    const Adam = (props) => {  return ( 
+        <div>
+            
+          
+        <h1>DOBRZE</h1>  
+        </div>  )}
+
+        const Calosc = () => {
+            return (
+                <React.Fragment>
+                    {Komp()}
+                    {Ola()}
+                
+                {Adam()}
+                </React.Fragment>
+            )
+        }
+  
+
+    ReactDOM.render(<Appi/>, document.getElementById('stary')) 
+    </script>
+</body>
+</html>
